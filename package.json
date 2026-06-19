@@ -1,0 +1,12 @@
+{
+  "name": "canon",
+  "version": "0.2.0",
+  "description": "CANON — a sandbox whose world-laws are AI-adjudicated and canonized on first discovery",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

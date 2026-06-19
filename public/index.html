@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voxel Craft</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="crosshair">+</div>
+  <div id="mineBar"><div id="mineFill"></div></div>
+
+  <div id="hud">
+    <div id="help">
+      WASD: 移動 ・ マウス: 視点 ・ Space/Shift: 上下 ・ 左: 破壊 ・ 右: 設置 ・ 1-9/ホイール: 選択 ・ E: クラフト
+    </div>
+  </div>
+
+  <div id="heldLabel"></div>
+  <div id="hotbar"></div>
+
+  <!-- Live discovery feed (shared world canon) -->
+  <div id="feed">
+    <div class="feed-title">🌍 世界の発見</div>
+    <div id="feedList"></div>
+  </div>
+
+  <!-- World-first celebration toast -->
+  <div id="firstToast" class="hidden"></div>
+
+  <div id="start">
+    <div class="panel">
+      <h1>🌍 CANON</h1>
+      <p>平原のブロックを壊して集め、組み合わせよう。<br>
+         組み合わせの結果は AI が決め、<b>世界で初めての組み合わせ</b>はその瞬間に
+         <b>全プレイヤー共通の正史</b>として永久に確定する。<br>
+         まだ誰も試していない組み合わせを見つけ、世界の法則を解き明かそう。</p>
+      <label class="handle-row">探検家ネーム：
+        <input id="handleInput" maxlength="24" placeholder="Explorer" />
+      </label>
+      <button id="startBtn">クリックして開始</button>
+    </div>
+  </div>
+
+  <!-- Crafting modal -->
+  <div id="craft" class="hidden">
+    <div class="panel craft-panel">
+      <h2>🧪 クラフト</h2>
+      <div class="slots">
+        <div class="slot" id="slotA"><span>素材 A</span></div>
+        <div class="plus">+</div>
+        <div class="slot" id="slotB"><span>素材 B</span></div>
+        <div class="eq">=</div>
+        <div class="slot result" id="slotR"><span>?</span></div>
+      </div>
+      <button id="craftBtn" disabled>クラフトする</button>
+      <div id="craftMsg"></div>
+      <h3>インベントリ（クリックで素材に設定）</h3>
+      <div id="invGrid"></div>
+      <button id="closeCraft" class="ghost">閉じる (E)</button>
+    </div>
+  </div>
+
+  <script type="module" src="game.js"></script>
+</body>
+</html>

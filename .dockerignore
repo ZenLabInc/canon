@@ -1,0 +1,6 @@
+node_modules
+craft-cache.db
+craft-cache.db-*
+*.log
+.git
+scripts
